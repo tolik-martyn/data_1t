@@ -1,0 +1,5 @@
+# Запускаем проект:
+docker-compose up
+
+# Останавливаем проект:
+docker-compose down

@@ -1,0 +1,20 @@
+# Собираем Docker-образ с использованием Dockerfile
+docker build -t mypostgres .
+
+# Запускаем контейнер
+docker run -d --name mypostgres -p 5432:5432 mypostgres
+
+# Проверяем, что контейнер работает
+docker ps
+
+# Подключаем к контейнеру PostgreSQL с помощью psql
+docker exec -it mypostgres psql -U myuser -d mydb
+
+# Выбираем все данные из таблицы index_mass
+SELECT * FROM public.index_mass;
+
+# Завершаем сеанс psql
+\q
+
+# Останавливаем контейнер:
+docker stop mypostgres

@@ -1,0 +1,7 @@
+# Обновляем Dockerfile
+
+# Собираем Docker-образ с обновленным Dockerfile
+docker build -t mypostgres .
+
+# Запускаем контейнер PostgreSQL
+docker run -d --name mypostgres -p 5432:5432 mypostgres

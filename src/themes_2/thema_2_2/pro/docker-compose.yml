@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-library
+    environment:
+      POSTGRES_USER: your_username
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: Library
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./library.sql:/docker-entrypoint-initdb.d/library.sql
+    networks:
+      - library-network
+
+networks:
+  library-network:

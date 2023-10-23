@@ -1,0 +1,17 @@
+# Запускаем контейнер PostgreSQL, если он еще не запущен:
+docker start mypostgres
+
+# Подключаем к контейнеру PostgreSQL с помощью psql
+docker exec -it mypostgres psql -U myuser -d mydb
+
+# Вставляем новую запись в таблицу
+INSERT INTO public.index_mass (user_id, weight, height) VALUES (4, 80, 178);
+
+# Выбираем все данные из таблицы index_mass
+SELECT * FROM public.index_mass;
+
+# Завершаем сеанс psql
+\q
+
+# Останавливаем контейнер:
+docker stop mypostgres
