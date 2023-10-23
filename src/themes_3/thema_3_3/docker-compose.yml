@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: my_postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  python-app:
+    build:
+      context: ./python-app
+      dockerfile: Dockerfile
+    container_name: my_python_app
+    volumes:
+      - ./python-app:/app
+    depends_on:
+      - db
+    command: python python_script.py
+
+  python-app2:
+    build:
+      context: ./python-app
+      dockerfile: Dockerfile
+    container_name: my_python_app2
+    volumes:
+      - ./python-app:/app
+    depends_on:
+      - python-app
+    command: python python_script2.py
+
+volumes:
+  postgres_data:
