@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: my-postgres-container
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./austin_bikeshare_trips.csv:/docker-entrypoint-initdb.d/austin_bikeshare_trips.csv
+      - ./austin_bikeshare_stations.csv:/docker-entrypoint-initdb.d/austin_bikeshare_stations.csv
+      - ./Script.sql:/docker-entrypoint-initdb.d/Script.sql
+
+volumes:
+  postgres-data:
