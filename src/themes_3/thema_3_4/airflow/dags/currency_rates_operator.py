@@ -23,10 +23,10 @@ dag = DAG(
 # Создание таблицы
 def create_currency_rates_table():
     db_params = {
-        'dbname': 'airflow',
-        'user': 'airflow',
-        'password': 'airflow',
-        'host': 'postgres',
+        'dbname': 'test',
+        'user': 'postgres',
+        'password': 'password',
+        'host': 'db',
         'port': 5432
     }
 
@@ -78,10 +78,10 @@ def fetch_currency_and_save_to_db():
         rate = quotes.get(f"{base_currency}{target_currency}")
 
         db_params = {
-            'dbname': 'airflow',
-            'user': 'airflow',
-            'password': 'airflow',
-            'host': 'postgres',
+            'dbname': 'test',
+            'user': 'postgres',
+            'password': 'password',
+            'host': 'db',
             'port': 5432
         }
 
