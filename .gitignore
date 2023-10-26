@@ -32,3 +32,4 @@ data-1t.iml
 .idea/
 src/themes_3/thema_3_4/airflow/dags/__pycache__/
 src/themes_3/thema_3_4/airflow/logs/
+src/themes_3/thema_3_5/airflow/logs/

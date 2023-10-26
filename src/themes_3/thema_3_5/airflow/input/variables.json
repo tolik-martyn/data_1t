@@ -1,0 +1,7 @@
+{
+    "api_key": "da05172f423e6ed8a0fd1e0c239c4674",
+    "api_url": "http://api.exchangerate.host/live",
+    "base_currency": "BTC",
+    "target_currency": "RUB",
+    "format": 1
+}

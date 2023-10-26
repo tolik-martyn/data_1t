@@ -1,0 +1,12 @@
+{
+  "connection_db": {
+    "conn_type": "postgres",
+    "description": "",
+    "login": "postgres",
+    "password": "password",
+    "host": "db",
+    "port": 5432,
+    "schema": "test",
+    "extra": ""
+  }
+}
