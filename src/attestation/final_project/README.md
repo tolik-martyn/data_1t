@@ -78,7 +78,7 @@
 
 **Структура хранилища данных:**
 
-![taxi-ride.png](taxi-ride.png)
+![taxi-ride.png](result/taxi-ride.png)
 
 ---
 

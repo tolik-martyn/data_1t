@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PYTHONUNBUFFERED 1
 
 # Команда для запуска приложений
-# CMD ["python", "script.py"]
+CMD ["python", "script.py"]

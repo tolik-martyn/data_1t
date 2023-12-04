@@ -18,6 +18,7 @@ services:
       context: ./app
     volumes:
       - ./app:/app
+      - ./result:/result_data
     depends_on:
       - postgres
     environment:
